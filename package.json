@@ -1,0 +1,21 @@
+{
+  "name": "fe-interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "aaa.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:upcpj/fe-interview.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.25.0",
+    "fs-extra": "^10.0.0"
+  }
+}
