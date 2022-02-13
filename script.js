@@ -3,6 +3,7 @@ import path, { dirname } from "path";
 import { fileURLToPath } from 'url';
 import fs from "fs-extra";
 import axios from "axios";
+import toc from "markdown-toc";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -15,9 +16,10 @@ fs.emptyDirSync(targetDir)
 jsons.data.forEach(json => {
   const title = json.title.replaceAll(" ", "")
   console.log(title)
-  const content = json.body || "content is null."
+  let content = json.body
+  if(!content) return
+  content = toc(content).content + '\n\n' + content
   const filepath = path.resolve(targetDir, title + ".md")
   fs.ensureFileSync(filepath)
   fs.writeFileSync(filepath, content)
-  debugger
 });
