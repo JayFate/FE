@@ -16,5 +16,4 @@ bin-release/
 .DS_Store
 
 node_modules
-articles
 package-lock.json
